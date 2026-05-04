@@ -1,0 +1,42 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:travenor/view/onboard1.dart';
+
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 5), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext context) => const OnboardingScreen(),
+        ),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color.fromRGBO(13, 110, 253, 1),
+      body: Center(
+        child: Text(
+          "Travenor",
+          style: GoogleFonts.poppins(
+            fontSize: 32,
+            fontWeight: FontWeight.w400,
+            color: const Color.fromRGBO(255, 255, 255, 1),
+          ),
+        ),
+      ),
+    );
+  }
+}
