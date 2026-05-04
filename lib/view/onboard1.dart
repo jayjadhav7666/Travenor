@@ -322,44 +322,49 @@ class OnboardPage extends StatelessWidget {
               ),
               const SizedBox(height: 25),
               indicator.animate().scale(duration: 300.ms),
-              const SizedBox(height: 25),
-              GestureDetector(
-                onTap: onButtonPressed,
-                child: Builder(
-                  builder: (context) {
-                    Widget btn = Container(
-                      height: 56,
-                      width: double.infinity,
-                      decoration: const BoxDecoration(
-                        color: Color.fromRGBO(13, 110, 253, 1),
-                        borderRadius: BorderRadius.all(Radius.circular(16)),
-                      ),
-                      child: Center(
-                        child: Text(
-                          buttonText,
-                          style: GoogleFonts.poppins(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: const Color.fromRGBO(255, 255, 255, 1),
-                          ),
-                        ),
-                      ),
-                    );
 
-                    if (pageIndex == 0) {
-                      return btn.animate(onPlay: (controller) => controller.repeat(reverse: true)).shimmer(duration: 1.seconds).scaleXY(begin: 1.0, end: 1.05);
-                    } else if (pageIndex == 1) {
-                      return btn.animate().slideY(begin: 1, duration: 500.ms, curve: Curves.easeOut);
-                    } else if (pageIndex == 2) {
-                      return btn.animate(onPlay: (controller) => controller.repeat(reverse: true)).scaleXY(begin: 1.0, end: 1.05, duration: 500.ms).shake();
-                    }
-                    return btn;
-                  },
-                ),
-              ),
             ],
           ),
         ),
+        const Spacer(),
+        Padding(
+          padding: const EdgeInsets.all(20),
+          child: GestureDetector(
+            onTap: onButtonPressed,
+            child: Builder(
+              builder: (context) {
+                Widget btn = Container(
+                  height: 56,
+                  width: double.infinity,
+                  decoration: const BoxDecoration(
+                    color: Color.fromRGBO(13, 110, 253, 1),
+                    borderRadius: BorderRadius.all(Radius.circular(16)),
+                  ),
+                  child: Center(
+                    child: Text(
+                      buttonText,
+                      style: GoogleFonts.poppins(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: const Color.fromRGBO(255, 255, 255, 1),
+                      ),
+                    ),
+                  ),
+                );
+
+                if (pageIndex == 0) {
+                  return btn.animate(onPlay: (controller) => controller.repeat(reverse: true)).shimmer(duration: 1.seconds).scaleXY(begin: 1.0, end: 1.05);
+                } else if (pageIndex == 1) {
+                  return btn.animate().slideY(begin: 1, duration: 500.ms, curve: Curves.easeOut);
+                } else if (pageIndex == 2) {
+                  return btn.animate(onPlay: (controller) => controller.repeat(reverse: true)).scaleXY(begin: 1.0, end: 1.05, duration: 500.ms).shake();
+                }
+                return btn;
+              },
+            ),
+          ),
+        ),
+        const Spacer(),
       ],
     );
   }

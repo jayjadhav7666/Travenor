@@ -17,7 +17,7 @@ class _MessageScreenState extends State<MessageScreen> {
   List<Map<String, dynamic>> chatList = [
     {
       "photo": "asset/message/chat1.png",
-      "name": "Sajib  Rahman",
+      "name": "Rockey",
       "message": "Hi, John! 👋 How are you doing?",
       "timing": "09:46",
       'seen': false,

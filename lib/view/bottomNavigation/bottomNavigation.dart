@@ -27,7 +27,7 @@ class _BottomnavigationScreenState extends State<BottomnavigationScreen> {
     return Scaffold(
       body: screens[_currentIndex],
       bottomNavigationBar: SizedBox(
-        height: 100,
+        height: 110,
         child: BottomNavigationBar(
           backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
           unselectedItemColor: const Color.fromRGBO(125, 132, 141, 1),

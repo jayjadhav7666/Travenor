@@ -17,8 +17,8 @@ class _SignInScreenState extends State<SignInScreen> {
   Future<void>? launched;
 
   ///Controllers
-  final TextEditingController _gmailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _gmailController = TextEditingController(text: 'codewithjp.dev@gmail.com');
+  final TextEditingController _passwordController = TextEditingController(text:'111111111');
 
   Future<void> _launchUrlInApp(Uri url) async {
     if (!await launchUrl(
